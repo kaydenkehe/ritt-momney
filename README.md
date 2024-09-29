@@ -1,13 +1,11 @@
-# ritt momney
-
-## grand goals
+# grand goals
 
 - [ ] blah blah blah
 - [ ] blah
 
-## tasks
+# tasks
 
-#### due 10/6
+### due 10/6
 
 kayden
 - [x] set up the repo :) :)
