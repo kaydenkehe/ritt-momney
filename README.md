@@ -12,7 +12,7 @@
 # Setup
 
 - Clone this repo
-- Place PLCO_Fine_Tuned_120419.pth from https://github.com/circ-ml/CXR-Age into assets/models (CXR-Age) into assets/models
+- Place PLCO_Fine_Tuned_120419.pth from https://github.com/circ-ml/CXR-Age (CXR-Age) into assets/models
 - Place cheff_autoencoder.pt and cheff_diff_uncond.pt from https://github.com/saiboxx/chexray-diffusion (LDM) into assets/models
 - Create a conda environment with `conda env create -n <name> -f environment.yml`
 - Clone the repo at https://github.com/saiboxx/chexray-diffusion, run `pip install -e ./` in its top-level directory to install the package used to interface with the LDM
