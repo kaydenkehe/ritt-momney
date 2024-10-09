@@ -6,13 +6,7 @@ from PIL import Image
 from fastai.vision.all import *
 import fastai
 
-model_path = 'assets/models/PLCO_Fine_Tuned_120419.pth'
-
-def change_model_path(path):
-    global model_path
-    model_path = path
-
-def load_model():
+def load_model(path='assets/'):
     # construct base
     learn = vision_learner(
         DataLoaders.from_dsets([], [], bs=1), # dummy dataloader 
@@ -35,25 +29,27 @@ def load_model():
     )
 
     # load params
-    learn.path = Path('../assets/')
+    # next two functions assume model is in <path>/models/PLCO_Fine_Tuned_120419.pth
+    # idk why
+    learn.path = Path(path)
     learn.load('PLCO_Fine_Tuned_120419')
     learn.eval()
 
-    learn.model = learn.model.to('cuda' if torch.cuda.is_available() else 'cpu')
-
     return learn
 
-def process(image_path):
-    image = Image.open(image_path).convert('RGB')
+def process(img, path=True):
+    # we receive a path to an image
+    if path:
+        img = Image.open(img).convert('RGB')
+        
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]), # imagenet normalization
     ])
-    image = transform(image).unsqueeze(0)
-    image = image.to('cuda' if torch.cuda.is_available() else 'cpu')
+    img = transform(img).unsqueeze(0)
 
-    return image
+    return img
 
 def out_to_age(output):
     output = output * 8.03342449139388 + 63.8723890235948
