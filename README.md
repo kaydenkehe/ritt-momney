@@ -1,13 +1,9 @@
 # Goals
 
 - [x] Find a CXR generator with desirable properties (high fidelity encoder and decoder, rich latent space)
-- [ ] Get a naive approach working
+- [x] Get a naive approach working
 - [ ] Come up with ideas for optimzing for human-understandability
   - bruh
-
-# Interpetability Questions
-
-- How can we measure the human-readability of AI-based explanations?
 
 # Setup
 
@@ -16,6 +12,12 @@
 - Place cheff_autoencoder.pt and cheff_diff_uncond.pt from https://github.com/saiboxx/chexray-diffusion (LDM) into assets/models
 - Create a conda environment with `conda env create -n <name> -f environment.yml`
 - Clone the repo at https://github.com/saiboxx/chexray-diffusion, run `pip install -e ./` in its top-level directory to install the package used to interface with the LDM
+
+# Repo
+
+- `assets/` contains all static assets. Helper scripts, all saved images, models, etc.
+- `exploration/` contains exploratory, proof-of-concept, and tutorial notebooks. e.g., how to set up and use the LDM.
+- `work/` contains more formal work. Actual attempts to solve our research question.
 
 # Resources, Papers
 
