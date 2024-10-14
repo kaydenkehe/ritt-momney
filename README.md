@@ -4,6 +4,9 @@
 - [x] Get a naive approach working
 - [ ] Come up with ideas for optimzing for human-understandability
   - bruh
+- [ ] Implement those ideas
+    - [ ] bruh
+    - [ ] bruh
 
 # Setup
 
@@ -19,7 +22,7 @@
 
 - `assets/` contains all static assets. Helper scripts, all saved images, models, etc.
 - `exploration/` contains exploratory, proof-of-concept, and tutorial notebooks. e.g., how to set up and use the LDM.
-- `work/` contains more formal work. Actual attempts to solve our research question.
+- `work/` contains more formal work. Actual attempts to tackle our research question.
 
 # Resources, Papers
 
