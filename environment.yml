@@ -1,4 +1,4 @@
-name: cheff
+name: rm
 channels:
   - pytorch
   - conda-forge
@@ -11,3 +11,5 @@ dependencies:
       - torchvision==0.15.2
       - fastai==2.7.12
       - matplotlib==3.9.2
+      - numpy==1.26.4
+      - ipykernel

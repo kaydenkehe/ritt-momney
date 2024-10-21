@@ -1,13 +1,11 @@
-# this will probably need quite a bit of re-tooling for our purposes
-
+import fastai
+from fastai.vision.all import *
+from PIL import Image
 import torch.nn as nn
 import torchvision.transforms as transforms
-from PIL import Image
-from fastai.vision.all import *
-import fastai
 
 def load_model(path='assets/'):
-    # construct base
+    # construct base model
     learn = vision_learner(
         DataLoaders.from_dsets([], [], bs=1), # dummy dataloader 
         fastai.vision.models.resnet34,
@@ -15,7 +13,7 @@ def load_model(path='assets/'):
         loss_func = MSELossFlat(), # dummy loss
     )
 
-    # modify
+    # modifications made for cxr-age
     learn.model[1] = nn.Sequential(
         *learn.model[1][:-5],
         nn.Linear(1024, 512, bias=True),
@@ -51,7 +49,8 @@ def process(img, path=True):
 
     return img
 
-def out_to_age(output):
+# biological age is a quadratic function of model output
+def age_fn(output):
     output = output * 8.03342449139388 + 63.8723890235948
     output = output * 6.75523 - 0.03771 * output * output - 213.77257
 

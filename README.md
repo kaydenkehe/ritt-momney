@@ -3,7 +3,7 @@
 - [x] Find a CXR generator with desirable properties (high fidelity encoder and decoder, rich latent space)
 - [x] Get a naive approach working
 - [ ] Come up with ideas for optimzing for human-understandability
-  - bruh
+  - smoothness in difference
 - [ ] Implement those ideas
     - [ ] bruh
     - [ ] bruh
@@ -36,3 +36,4 @@
 - Cheff: LDM for CXR generation
     - https://arxiv.org/abs/2303.11224
     - https://github.com/saiboxx/chexray-diffusion
+
