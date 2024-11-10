@@ -8,6 +8,8 @@
     - [ ] bruh
     - [ ] bruh
 
+compare latent space reps of different cxrs to find disentanglement*?
+
 # Setup
 
 - Clone this repo

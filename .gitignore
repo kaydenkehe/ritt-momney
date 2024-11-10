@@ -1,2 +1,7 @@
 assets/models/*
 assets/scripts/__pycache__/
+assets/cxrs/nih_full/*
+exploration/mnist/__pycache__/
+exploration/mnist/data/*
+exploration/mnist/VAE-Pytorch/data/train/*
+exploration/mnist/VAE-Pytorch/data/test/*

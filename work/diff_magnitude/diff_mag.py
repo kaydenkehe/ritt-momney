@@ -43,17 +43,23 @@ with torch.no_grad():
 
 # incentivize high outputs and low difference entropy
 def loss_fn(a, b, c, pred, lrep, prev_lrep):
-    diff = (lrep - prev_lrep.detach())[0].mean(dim=0)
-    mag = diff.norm().item()
+    diff = (lrep - prev_lrep.detach())[0]
 
-    return a * pred - b * mag# - c * smooth
+    # encourage diff to be sparse
+    sparsity = diff.norm(p=1)
+
+    # encourage diff to be large
+    magnitude = diff.norm(p=2)
+
+    return a * pred + b * magnitude + c * sparsity
 
 
 
-a = 0
-b = 1e12
-c = 0
-lr = 0.005 
+
+a = 7e2
+b = 1e1
+c = 1e1
+lr = 0.01
 epochs = 20
 
 # image processing for cxr-age
