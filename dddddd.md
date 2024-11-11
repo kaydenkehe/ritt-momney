@@ -28,7 +28,7 @@ aggregation:<br>
 - geometric mean seems to be a winner. it has some desirable properties - any individual low value is a pretty severe penalty, but all high values will result in a high aggregate (unlike just multiplying the values together, for example)
 
 <br><br>
-additional thoughts:<br
+additional thoughts:<br>
 - whether a change in cfs is 'small' seems domain-specific, but i'm unsure and open to being persuaded by empirical results.
 - debating making intra-difference smoothness a desirable metric (inter-difference smoothness we already have). this feels like it might be domain-specific. in a stupid degenerate case, what if we were generating counterfactuals for a regressor that predicted how noisy an image was? then, intra-difference smoothness would be undesirable.
 - debating including locality for the same reason as above, and also because i haven't convinced myself that it's actually *helpful*.
