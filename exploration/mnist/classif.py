@@ -127,14 +127,19 @@ plt.savefig('runitup.png')
 
 # %%
 # plot animation of images superimposed with prediction probability of class 9
+# remove axes, tight padded layout
 import matplotlib.animation as animation
 from matplotlib import rc
 
-fig, ax = plt.subplots()
+# remove axes
+fig, ax = plt.subplots(figsize=(6, 6))
+
 ims = []
 for i in range(len(imgs)):
     im = ax.imshow(imgs[i].squeeze().numpy(), cmap='gray')
-    text = ax.text(0.2, 1.4, f'{torch.exp(classifier(imgs[i])[0, 9]).item():.2f}', color='red', fontsize=16)
+    text = ax.text(0.2, 1.4, f'{torch.exp(classifier(imgs[i])[0, 9]).item():.2f}', color='red', fontsize=20)
+    ax.axis('off')
+    plt.tight_layout(pad=1.5)
     ims.append([im, text])
 
 ani = animation.ArtistAnimation(fig, ims, interval=40, blit=True, repeat_delay=1000)
