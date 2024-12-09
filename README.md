@@ -1,15 +1,15 @@
-# Goals
+# Overview
 
-- [x] Find a CXR generator with desirable properties (high fidelity encoder and decoder, rich latent space)
-- [x] Get a naive approach working
-- [ ] Come up with ideas for optimzing for human-understandability
-  - smoothness in difference
-- [ ] Implement those ideas
-    - [ ] bruh
-    - [ ] bruh
-
-compare latent space reps of different cxrs to find disentanglement*?
-
+This project explores a new method for generating counterfactual images for regression models
+by optimizing over representations in the latent space. The approach links the output of an
+autoencoder, which models the input space of a target model, to the target model itself. By
+optimizing the autoencoder’s latent space representation for a specific input, we guide the
+generated images toward a desired output value, ideally producing a continuous sequence of
+images which shows a human-interpretable change in the original input. We call our method
+LoSoCs, or Latent Optimization Stream of Counterfactuals. We also propose and implement
+metrics to quantitatively evaluate the quality of the generated streams of counterfactuals and
+explore other aspects of the behavior of the process in our latent space. See the full research
+paper developed for CS2822R here: https://drive.google.com/drive/folders/1ijwLrzKOkEZLFJ-e68XqekCslFxpfOcX?usp=sharing
 # Setup
 
 - Clone this repo
