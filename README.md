@@ -1,5 +1,7 @@
 # Overview
 
+UPDATE: See our research paper 'losocs_research_paper_cs2822r.pdf'.
+
 This project explores a new method for generating counterfactual images for regression models
 by optimizing over representations in the latent space. The approach links the output of an
 autoencoder, which models the input space of a target model, to the target model itself. By
